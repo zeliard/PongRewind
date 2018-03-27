@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Main">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Shared">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="3rdParty">
+      <UniqueIdentifier>{ed114b68-d9e7-44fb-bddb-83f4b33a99c9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="targetver.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PongShared\SharedStruct.h">
+      <Filter>Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="GUIController.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PongShared\GameLogic.h">
+      <Filter>Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PongShared\CircularBuffer.h">
+      <Filter>Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="NetController.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="ini.h">
+      <Filter>3rdParty</Filter>
+    </ClInclude>
+    <ClInclude Include="INIReader.h">
+      <Filter>3rdParty</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="PongClient.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="GUIController.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PongShared\GameLogic.cpp">
+      <Filter>Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PongShared\CircularBuffer.cpp">
+      <Filter>Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="NetController.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="ini.c">
+      <Filter>3rdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="INIReader.cpp">
+      <Filter>3rdParty</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="config.ini" />
+  </ItemGroup>
+</Project>
