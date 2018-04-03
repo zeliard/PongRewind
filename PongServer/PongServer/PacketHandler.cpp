@@ -127,7 +127,7 @@ REGISTER_HANDLER(PKT_CS_RACKET)
 
 	
 	//TEST: PacketQueueing... 패킷 임의로 늦추기 실험
-	uint32_t delay = rand() % 200; // ms
+	uint32_t delay = rand() % 100; // ms
 	CallFuncAfter(delay, session, &ClientSession::RacketAction, inPacket);
 
 	//session->RacketAction(inPacket);

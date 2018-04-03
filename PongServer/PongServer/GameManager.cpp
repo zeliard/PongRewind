@@ -63,7 +63,7 @@ void GameManager::RacketAction(const RacketRequest& req)
 		return;
 	}
 
-	/// 여기서 리와인드해서 클라가 보내준 프레임으로 돌려서 판정
+	/// 여기서 리와인드해서 클라가 보내준 프레임으로 돌려서 시뮬레이션
 	
 	GameStatus rewound = mGameLogic.GetGameStatus(req.mRecentWorldFrame);
 	if (rewound.mWorldFrame != req.mRecentWorldFrame)
@@ -94,13 +94,13 @@ void GameManager::RacketAction(const RacketRequest& req)
 		}
 	}
 
-	// 판정은 리와인드 시점으로, 적용은 현재 시점으로
+	/// 이 게임에서는 해시가 틀리더라도 diff분의 입력에 대해서는 적용해주는 것으로.. (이 부분은 게임마다 케바케)
 	GameStatus current = mGameLogic.GetCurrentGameStatus();
 
 	bool apply = mGameLogic.ChangeGameStatus(current, req.mPlayerType, req.mPosDiff, req.mIsShoot);
 	if (apply)
 	{
-		/// 실제로 적용
+		/// 클라이언트 입력 반영
 		mGameLogic.SetCurrentGameStatus(current);
 	}
 }
@@ -118,7 +118,7 @@ void GameManager::OnFrameUpdate()
 	packet.mRightResyncNeededInputFrame = RightResyncNeeded();
 	
 	//TEST: 패킷 임의로 방송 늦추기 실험
-	uint32_t delay = rand() % 200; // ms
+	uint32_t delay = rand() % 100; // ms
 
 	GClientManager->DelayedBroadcastGameStatus(delay, packet);
 
